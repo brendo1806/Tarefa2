@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+{% load tags %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Faça o cadastro de Produtos</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Código</th>
+        <th>Descrição</th>
+        <th>Valor Unitário</th>
+        <th>Quantidade de Estoque</th>
+    </tr>
+    </thead>
+<tbody>
+{% for produto in listp %}
+<tr>
+    <td>
+        <a href="{% url 'produto:detail' produto.id %}">{{ produto.nome }}</a>
+    </td>
+    <td>{{ produto.codigo }}</td>
+    <td>{{ produto.descricao }}</td>
+    <td>{{ produto.valorunitario }}</td>
+    <td>{{ produto.quantidadedeestoque }}</td>
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<a href="{% url 'produtos:add' %}">Novo</a>
+</body>
+</html>

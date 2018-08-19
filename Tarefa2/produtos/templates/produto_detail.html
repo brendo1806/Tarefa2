@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Código: {{ object.codigo }}</p>
+<p>Descrição: {{ object.descricao }}</p>
+<p>Valor Unitário: {{ object.valorunitario }}</p>
+
+
+<a href="{% url 'produto:list' %}">Listagem</a>
+<a href="{% url 'produto:edit' pk=object.id %}">Editar</a>
+<a href="{% url 'produto:delete' pk=object.id %}">Excluir</a>
+</body>
+</html>

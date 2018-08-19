@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Nome: {{ object.nome }}</p>
+<p>CNPJ: {{ object.CNPJ }}</p>
+<p>Endereço: {{ object.Endereço }}</p>
+
+
+<a href="{% url 'fornecedores:list' %}">Listagem</a>
+<a href="{% url 'fornecedores:edit' pk=object.id %}">Editar</a>
+<a href="{% url 'fornecedores:delete' pk=object.id %}">Excluir</a>
+</body>
+</html>

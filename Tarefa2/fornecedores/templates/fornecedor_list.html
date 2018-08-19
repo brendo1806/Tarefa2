@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+{% load tags %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Faça o cadastro de Fornecedores</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>CNPJ</th>
+        <th>Endereço</th>
+        <th>Tipo</th>
+        <th>Email</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+<tbody>
+{% for controle in controle_list %}
+<tr>
+    <td>
+        <a href="{% url 'fornecedores:detail' controle.id %}">{{ controle.nome }}</a>
+    </td>
+    <td>{{ controle.CNPJ }}</td>
+    <td>{{ controle.endereco }}</td>
+    <td>{{ controle.tipo|tipo_choices }}</td>
+    <td>{{ controle.email }}</td>
+    <td>{{ controle.status }}</td>
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<a href="{% url 'fornecedores:add' %}">Novo</a></br>
+<a href="{% url 'fornecedores:enviar-email' %}">Fazer Pedido</a>
+</body>
+</html>
